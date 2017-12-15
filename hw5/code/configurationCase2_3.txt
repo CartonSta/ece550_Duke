@@ -1,0 +1,23 @@
+name=1
+A=4
+B=64
+C=262144
+writeAllo=1
+policy=0
+insData=2
+
+A = 1 direct map
+C = 16384 = 1024*16
+
+# name=0 for L1, 1 for L2
+# self.A = 1
+# B = block size
+# C = capacity
+# self.writeAllo = True 
+# policy, 0 for LRU, 1 for RND,
+# insData, 0 for ins, 1 for data, 2 for both
+
+#associativity, num of ways
+#A = 1 for direct map (C/B 1-way set, fast lookup)
+#A = (C/B) way for fully associative (one set only, slow, stores everything)
+#A*set_num = (C/B)

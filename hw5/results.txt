@@ -1,0 +1,87 @@
+Case 1:
+
+Assume L1 hit = 1 cycle, Memory access = 100 cycles.
+Overall access time: 59300 cycles.
+
+Loading instructions:
+100% (10000 of 10000) |#######################################################################################| Elapsed Time: 0:00:00 Time: 0:00:00
+
+Cache type: l1_unified
+A: 1, B: 32, C: 8192
+Policy: LRU, Write allocate: True
+
+Cache simulating:
+100% (10000 of 10000) |#######################################################################################| Elapsed Time: 0:00:00 Time: 0:00:00
+Metrics                      Total           Instrn                 Data            Read           Write            Misc
+------                       -----           ------                 ----            ----           -----            ----
+Demand Fetches              10000             7637                  2363           1027            1336               0
+Fraction of total          1.0000           0.7637                0.2363         0.1027          0.1336          0.0000
+
+Demand Misses                 493              251                   242             48             194               0
+Demand Misses rate         0.0493           0.0329                0.1024         0.0467          0.1452          0.0000
+Estimated time: 59300
+Overall access time: 59300
+
+
+
+
+Case 2:
+
+Macbook 2015, 2.7 GHz Intel Core i5, simulation time: 6min 22s
+
+Miss rate for L1 Instruction cache: 0%
+Miss rate for L1 Data cache: 3.84%
+Miss rate for L2: 2.85%
+Assume L1 hit = 1 cycle, L2 hit = 5 cycles, Memory access = 100 cycles.
+Overall access time: 7993710 cycles.
+
+
+$ python simulator.py
+Loading instructions:
+100% (7458670 of 7458670) |###################################################################################| Elapsed Time: 0:01:39 Time: 0:01:39
+
+Cache type: l1_instruction only
+A: 1, B: 32, C: 16384
+Policy: RND, Write allocate: True
+
+Cache simulating:
+100% (7458670 of 7458670) |###################################################################################| Elapsed Time: 0:01:41 Time: 0:01:41
+Metrics                      Total           Instrn                 Data            Read           Write            Misc
+------                       -----           ------                 ----            ----           -----            ----
+Demand Fetches            5689551            5689551                     0              0               0               0
+Fraction of total          1.0000           1.0000                0.0000         0.0000          0.0000          0.0000
+
+Demand Misses                 261              261                     0              0               0               0
+Demand Misses rate         0.0000           0.0000                0.0000         0.0000          0.0000          0.0000
+Estimated time: 5689551
+
+Cache type: l1_data only
+A: 1, B: 32, C: 16384
+Policy: RND, Write allocate: True
+
+Cache simulating:
+100% (7458670 of 7458670) |###################################################################################| Elapsed Time: 0:00:45 Time: 0:00:45
+Metrics                      Total           Instrn                 Data            Read           Write            Misc
+------                       -----           ------                 ----            ----           -----            ----
+Demand Fetches            1769119                0                 1769119          1145629           623490               0
+Fraction of total          1.0000           0.0000                1.0000         0.6476          0.3524          0.0000
+
+Demand Misses               67927                0                 67927          56893           11034               0
+Demand Misses rate         0.0384           0.0000                0.0384         0.0497          0.0177          0.0000
+Estimated time: 1769119
+
+Cache type: l2_unified
+A: 4, B: 64, C: 262144
+Policy: LRU, Write allocate: True
+
+Cache simulating:
+100% (7458670 of 7458670) |###################################################################################| Elapsed Time: 0:02:17 Time: 0:02:17
+Metrics                      Total           Instrn                 Data            Read           Write            Misc
+------                       -----           ------                 ----            ----           -----            ----
+Demand Fetches              68188              261                 67927          56893           11034               0
+Fraction of total          1.0000           0.0038                0.9962         0.8344          0.1618          0.0000
+
+Demand Misses                1941              144                  1797            142            1655               0
+Demand Misses rate         0.0285           0.5517                0.0265         0.0025          0.1500          0.0000
+Estimated time: 535040
+Overall access time: 7993710

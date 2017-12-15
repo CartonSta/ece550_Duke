@@ -1,0 +1,7 @@
+name=1
+A=4
+B=32
+C=16384
+writeAllo=1
+policy=1
+insData=2
